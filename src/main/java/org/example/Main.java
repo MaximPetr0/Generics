@@ -29,9 +29,18 @@ public class Main {
 
 
 //        double info2Output=animal2.printInfo(4.5);
-        System.out.println(zoo.toString());
-        for (Animal animal:zoo){
+        System.out.println("Zoo toString: " + zoo);
+
+        System.out.println("Animals via iterator:");
+        for (Animal animal : zoo) {
             System.out.println(animal);
         }
+        zoo.addAnimal(cat1);
+        zoo.addAnimal(cat2);
+        zoo.addAnimal(dog1);
+        zoo.addAnimal(dog2);
+
+        System.out.println("Animals via foreach");
+        zoo.forEach(x -> System.out.println(x));
     }
 }

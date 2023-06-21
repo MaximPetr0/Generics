@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 class Zoo<T extends Animal> implements Iterable<T> {
     private final List<T> animals;
@@ -33,24 +32,13 @@ class Zoo<T extends Animal> implements Iterable<T> {
         return new Iterator<>() {
             @Override
             public boolean hasNext() {
-                return animals.isEmpty();
+                return !animals.isEmpty();
             }
 
             @Override
             public T next() {
-                return animals.get((animals.size() - 1));
+                return getAnimal();
             }
         };
-
-
-
-
     }
-
-    @Override
-    public void forEach(Consumer<? super T> action) {
-        Iterable.super.forEach(action);
-    }
-
-
 }
